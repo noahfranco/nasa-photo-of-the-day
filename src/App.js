@@ -14,7 +14,11 @@ const [NasaData, setNasaData] = useState("");
     axios
     .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2019-07-15")
     .then((element) => {
+      console.log(element)
     return setNasaData(element.data.copyright) 
+    })
+    .catch(error => {
+      return setNasaData("error", error)
     })
   },[]); 
 
