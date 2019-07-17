@@ -11,7 +11,7 @@ useEffect(() => {
   .then((element) => {
   return element.data.links 
   })
-}); 
+}, []); 
 
 function App() {
   return (
