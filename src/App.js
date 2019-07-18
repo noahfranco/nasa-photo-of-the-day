@@ -7,13 +7,18 @@ import Date from "./components/Date.js"
 
 function App() {
 const [NasaData, setNasaData] = useState(""); 
+const [NasaExplanation, setNasaExplanation] = useState([]); 
+const [NasaDate, setNasaDate] = useState([]);
 
   useEffect(() => {
     axios
     .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2019-07-15")
     .then((element) => {
       console.log(element)
-    return setNasaData(element.data.copyright)
+    setNasaData(`${element.data.copyright}`)
+    setNasaExplanation(`${element.data.explanation}`)
+    setNasaDate(`${element.data.date}`)
+    
     })
     .catch(error => {
       return setNasaData("error", error)
@@ -23,10 +28,20 @@ const [NasaData, setNasaData] = useState("");
   return (
     <div className="App">
       <div>
-        <Img NasaData={NasaData} /> 
-        {NasaData}
-        <Explanation NasaData={NasaData} />
-        {/* <Date NasaData={NasaData} />  */}
+        <div>
+            {NasaData}
+        </div>
+        <div> 
+            <Img />
+        </div>
+        <div> 
+          {NasaExplanation}
+            <Explanation />
+        </div>
+        <div> 
+          {NasaDate}
+            <Date /> 
+        </div>
       </div>
     </div>
   );
