@@ -5,6 +5,8 @@ import Img from "./components/Img.js"
 import Explanation from "./components/Explanation"
 import Date from "./components/Date.js"
 import CopyRight from "./components/CopyRight.js"
+import {TextColor, BackGroundColor } from "./components/styl.js"
+
 
 function App() {
 const [NasaCopyRight, setNasaCopyRight] = useState([]); 
@@ -32,18 +34,18 @@ const [NasaDate, setNasaDate] = useState([]);
   return (
     <div className="App">
       <div>
-        <div>
+        <TextColor> 
             <CopyRight NasaCopyRight={NasaCopyRight} />
-        </div>
+        </TextColor>  
         <div> 
             <Img NasaImg={NasaImg} />
         </div>
-        <div> 
+        <TextColor> 
             <Explanation NasaExplanation={NasaExplanation}/>
-        </div>
-        <div> 
+        </TextColor> 
+        <TextColor> 
             <Date NasaDate={NasaDate} /> 
-        </div>
+        </TextColor>
       </div>
     </div>
   );
