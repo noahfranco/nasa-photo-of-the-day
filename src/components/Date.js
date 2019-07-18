@@ -2,9 +2,9 @@ import React from "react";
 // import App from "./../App"; 
 
 function AwesomeDate(props) {
+    console.log("This is date props", props.NasaDate)
     return(
-        // <p> 2019-07-15 </p> 
-        <p> </p>
+        <p> {props.NasaDate} </p>
     )
 }
 
