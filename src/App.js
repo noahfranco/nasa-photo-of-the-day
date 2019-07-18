@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from "react";
 import "./App.css";
-
 import axios from "axios"; 
-
-
-
-
+import Img from "./components/Img.js"
+import Explanation from "./components/Explanation"
+import Date from "./components/Date.js"
 
 function App() {
 const [NasaData, setNasaData] = useState(""); 
@@ -15,7 +13,7 @@ const [NasaData, setNasaData] = useState("");
     .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2019-07-15")
     .then((element) => {
       console.log(element)
-    return setNasaData(element.data.copyright) 
+    return setNasaData(element.data.copyright)
     })
     .catch(error => {
       return setNasaData("error", error)
@@ -24,9 +22,12 @@ const [NasaData, setNasaData] = useState("");
 
   return (
     <div className="App">
-      <p>
+      <div>
+        <Img NasaData={NasaData} /> 
         {NasaData}
-      </p>
+        <Explanation NasaData={NasaData} />
+        {/* <Date NasaData={NasaData} />  */}
+      </div>
     </div>
   );
 }
