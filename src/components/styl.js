@@ -4,6 +4,6 @@ export const TextColor = styled.div`
 color: white; 
 `
 export const BackGroundColor = styled.div`
-background: red; 
+background: black; 
 `
 

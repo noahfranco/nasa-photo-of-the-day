@@ -33,7 +33,7 @@ const [NasaDate, setNasaDate] = useState([]);
 
   return (
     <div className="App">
-      <div>
+      <BackGroundColor>
         <TextColor> 
             <CopyRight NasaCopyRight={NasaCopyRight} />
         </TextColor>  
@@ -46,7 +46,7 @@ const [NasaDate, setNasaDate] = useState([]);
         <TextColor> 
             <Date NasaDate={NasaDate} /> 
         </TextColor>
-      </div>
+      </BackGroundColor>
     </div>
   );
 }
